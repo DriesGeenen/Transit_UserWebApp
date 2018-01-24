@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const UserReader = ({ users }) => {
+const UserReader = ({ users, onClickHandler }) => {
 
     const output = users.map ( (user, i) => {
         return (
@@ -9,7 +10,7 @@ const UserReader = ({ users }) => {
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
                 <td>{user.role}</td>
-                <td><span className="fa fa-pencil"/></td>
+                <td onClick={() => onClickHandler(user._id)}><span className="fa fa-pencil"/></td>
                 <td><span className="fa fa-trash"/></td>
             </tr>
         )
@@ -18,7 +19,8 @@ const UserReader = ({ users }) => {
     return (
         <div>
             <h2 className="page-header">Gebruikers</h2>
-            <div className="table-responsive">
+            <Link to={`/create`}>Gebruiker toevoegen</Link>
+            <div className="table-responsive marginTop-20">
                 <table className="table">
                     <thead>
                         <tr>

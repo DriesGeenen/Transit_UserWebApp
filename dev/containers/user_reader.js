@@ -10,10 +10,16 @@ class UserReaderContainer extends Component {
         this.state = {
             users: []
         };
+
+        this.delete = this.delete.bind(this);
     }
 
     componentDidMount() {
-        var promise = axios.get("http://localhost:6600/users/");
+        this.getUsers();
+    }
+
+    getUsers(){
+        var promise = axios.get("http://localhost:6601/users/");
 
         promise.then(function(result){
                 let users = result.data.data;
@@ -25,9 +31,16 @@ class UserReaderContainer extends Component {
         );
     }
 
+    delete(id){
+        axios.delete('http://localhost:6601/users/'+id)
+            .then((result) => {
+            this.getUsers();
+            });
+    }
+
     render() {
         return (
-            <UserReader users={this.state.users} />
+            <UserReader users={this.state.users} onClickHandler={this.delete} />
         );
     }
 }
