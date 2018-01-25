@@ -4,8 +4,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
-class Create extends Component {
+// todo refresh list users after onSubmit is called
 
+class Create extends Component {
     constructor() {
         super();
         this.state = {
@@ -41,9 +42,8 @@ class Create extends Component {
         axios.post('http://localhost:6600/auth/register', { firstName, lastName, password, email, phone, role })
             .then((result) => {
                 console.log(result);
+                this.setState({redirect: true});
             });
-
-        this.setState({redirect: true});
     }
 
     render() {
@@ -82,7 +82,7 @@ class Create extends Component {
                                 <label htmlFor="phone">Telefoon:</label>
                                 <input type="text" className="form-control" name="phone" value={phone} onChange={this.onChange} placeholder="telefoon" />
                             </div>
-                            <div>
+                            <div className="form-group">
                                 <label htmlFor="checked">Admin:</label>
                                 <input type="checkbox" className="form-control" name="checked" onChange={this.onChange} />
                             </div>

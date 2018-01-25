@@ -10,8 +10,8 @@ const UserReader = ({ users, onClickHandler }) => {
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
                 <td>{user.role}</td>
-                <td onClick={() => onClickHandler(user._id)}><span className="fa fa-pencil"/></td>
-                <td><span className="fa fa-trash"/></td>
+                <td><Link to={`/users/`+ user._id}><span className="fa fa-pencil"/></Link></td>
+                <td><a onClick={() => onClickHandler(user._id)}><span className="fa fa-trash"/></a></td>
             </tr>
         )
     });

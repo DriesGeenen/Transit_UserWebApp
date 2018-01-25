@@ -15,6 +15,7 @@ class UserReaderContainer extends Component {
     }
 
     componentDidMount() {
+        console.log("componentDidMount LIJST USERS");
         this.getUsers();
     }
 
@@ -24,6 +25,7 @@ class UserReaderContainer extends Component {
         promise.then(function(result){
                 let users = result.data.data;
                 this.setState({ users:users });
+            console.log(result.data.data);
             }.bind(this),
             function (error){
                 console.log('Something went wrong')
