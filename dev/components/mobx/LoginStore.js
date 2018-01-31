@@ -11,15 +11,15 @@ class LoginStore {
                 LoggedIn: false
             }
         );
-
     }
 
-    async SignIn() {
-        // todo loggedin controle
-        this.LoggedIn = true;
-        const body = {email:Email,password:Password};
+    async SignIn(givenEmail, givenPassword) {
+        const body = {email:givenEmail,password:givenPassword};
         let data = await axios.post(this.apiUrl + "login",body);
-        localStorage.setItem("token", data.data.token);
+        if(data.data.success){
+            this.LoggedIn = true;
+            localStorage.setItem("token", data.data.token);
+        }
     }
 
     LogOut() {

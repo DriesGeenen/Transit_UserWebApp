@@ -33013,12 +33013,13 @@ var LoginStore = function () {
 
     _createClass(LoginStore, [{
         key: "SignIn",
-        value: async function SignIn() {
-            // todo loggedin controle
-            this.LoggedIn = true;
-            var body = { email: Email, password: Password };
+        value: async function SignIn(givenEmail, givenPassword) {
+            var body = { email: givenEmail, password: givenPassword };
             var data = await _axios2.default.post(this.apiUrl + "login", body);
-            localStorage.setItem("token", data.data.token);
+            if (data.data.success) {
+                this.LoggedIn = true;
+                localStorage.setItem("token", data.data.token);
+            }
         }
     }, {
         key: "LogOut",
@@ -34775,6 +34776,11 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
 
         var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
 
+        _this.state = {
+            email: '',
+            password: ''
+        };
+
         _this.onEmailChange = _this.onEmailChange.bind(_this);
         _this.onPasswordChange = _this.onPasswordChange.bind(_this);
         _this.onLogin = _this.onLogin.bind(_this);
@@ -34784,17 +34790,19 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
     _createClass(Login, [{
         key: 'onEmailChange',
         value: function onEmailChange(event) {
-            this.props.LoginStore.Email = event.target.value;
+            var email = event.target.value;
+            this.setState({ email: email });
         }
     }, {
         key: 'onPasswordChange',
         value: function onPasswordChange(event) {
-            this.props.LoginStore.Password = event.target.value;
+            var password = event.target.value;
+            this.setState({ password: password });
         }
     }, {
         key: 'onLogin',
-        value: function onLogin() {
-            this.props.LoginStore.SignIn();
+        value: async function onLogin() {
+            await this.props.LoginStore.SignIn(this.state.email, this.state.password);
 
             if (this.props.LoginStore.LoggedIn) {
                 this.props.history.push('/');
@@ -34811,13 +34819,13 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
                     { className: 'col m6 offset-m3 s12' },
                     _react2.default.createElement(
                         _reactMaterialize.Card,
-                        { className: 'darken-1', textClassName: '', title: 'Login', actions: [_react2.default.createElement(
+                        { className: 'input-field darken-1 z-depth-4', textClassName: '', title: 'Login', actions: [_react2.default.createElement(
                                 _reactMaterialize.Button,
-                                { key: 'loginButton', onClick: this.onLogin, waves: 'light' },
+                                { key: 'loginButton', className: 'orange darken-3', onClick: this.onLogin, waves: 'light' },
                                 'Login'
                             )] },
-                        _react2.default.createElement(_reactMaterialize.Input, { s: 12, label: 'Email', value: this.props.LoginStore.Email, onChange: this.onEmailChange }),
-                        _react2.default.createElement(_reactMaterialize.Input, { s: 12, label: 'Password', value: this.props.LoginStore.Password, onChange: this.onPasswordChange, type: 'password' }),
+                        _react2.default.createElement(_reactMaterialize.Input, { id: 'icon_prefix', s: 12, label: 'E-mail', value: this.state.email, onChange: this.onEmailChange, type: 'text' }),
+                        _react2.default.createElement(_reactMaterialize.Input, { s: 12, label: 'Password', value: this.state.password, onChange: this.onPasswordChange, type: 'password' }),
                         _react2.default.createElement('div', { className: 'clearfix' })
                     )
                 )

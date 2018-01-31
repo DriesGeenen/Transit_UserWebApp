@@ -6,21 +6,28 @@ export default inject("LoginStore")(observer(class Login extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            email:'',
+            password:''
+        };
+
         this.onEmailChange = this.onEmailChange.bind(this);
         this.onPasswordChange = this.onPasswordChange.bind(this);
         this.onLogin = this.onLogin.bind(this);
     }
 
     onEmailChange(event) {
-        this.props.LoginStore.Email = event.target.value;
+        var email = event.target.value;
+        this.setState({email:email});
     }
 
     onPasswordChange(event) {
-        this.props.LoginStore.Password = event.target.value;
+        var password = event.target.value;
+        this.setState({password:password});
     }
 
-    onLogin() {
-        this.props.LoginStore.SignIn();
+    async onLogin() {
+        await this.props.LoginStore.SignIn(this.state.email,this.state.password);
 
         if(this.props.LoginStore.LoggedIn){
             this.props.history.push('/');
@@ -30,9 +37,9 @@ export default inject("LoginStore")(observer(class Login extends Component {
     render() {
         return (<div className="row">
             <div className="col m6 offset-m3 s12">
-                <Card className='darken-1' textClassName='' title='Login' actions={[<Button key="loginButton" onClick={this.onLogin} waves='light'>Login</Button>]}>
-                    <Input s={12} label="Email" value={this.props.LoginStore.Email} onChange={this.onEmailChange} />
-                    <Input s={12} label="Password" value={this.props.LoginStore.Password} onChange={this.onPasswordChange} type="password" />
+                <Card className='input-field darken-1 z-depth-4' textClassName='' title='Login' actions={[<Button key="loginButton" className="orange darken-3" onClick={this.onLogin} waves='light'>Login</Button>]}>
+                    <Input id="icon_prefix" s={12} label="E-mail" value={this.state.email} onChange={this.onEmailChange} type="text" />
+                    <Input s={12} label="Password" value={this.state.password} onChange={this.onPasswordChange} type="password" />
                     <div className="clearfix" />
                 </Card>
             </div>
