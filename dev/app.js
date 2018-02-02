@@ -11,7 +11,7 @@ import Edit from './components/edit';
 import Login from './components/login';
 
 const Main = () => (
-    <div className="content">
+    <div className="content container">
         <Switch>
             <Route exact path='/login' component={Login} />
             <Route exact path='/users' component={UserReader}/>
@@ -23,7 +23,7 @@ const Main = () => (
 
 const App = function () {
     return (
-        <div>
+        <div className="fill">
             <Navbar/>
             <Main />
         </div>

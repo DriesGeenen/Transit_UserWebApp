@@ -18698,7 +18698,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Main = function Main() {
     return _react2.default.createElement(
         'div',
-        { className: 'content' },
+        { className: 'content container' },
         _react2.default.createElement(
             _reactRouterDom.Switch,
             null,
@@ -18713,7 +18713,7 @@ var Main = function Main() {
 var App = function App() {
     return _react2.default.createElement(
         'div',
-        null,
+        { className: 'fill' },
         _react2.default.createElement(_navbar2.default, null),
         _react2.default.createElement(Main, null)
     );
@@ -33995,18 +33995,18 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
 
             return _react2.default.createElement(
                 'nav',
-                { className: 'navbar black' },
+                null,
                 _react2.default.createElement(
                     'div',
-                    { className: 'nav-wrapper' },
+                    { className: 'nav-wrapper grey darken-3' },
                     _react2.default.createElement(
                         'a',
-                        { href: '#!', className: 'brand-logo center hide-on-med-and-down' },
-                        'Transit'
+                        { href: '#!', className: 'brand-logo hide-on-med-and-down' },
+                        _react2.default.createElement('img', { src: 'https://i.imgur.com/YxVHfN8.png', height: '45px', width: '45px' })
                     ),
                     _react2.default.createElement(
                         'ul',
-                        { className: 'left' },
+                        { id: 'nav-mobile', className: 'right marginRight-20 marginTop-20' },
                         _react2.default.createElement(
                             'li',
                             null,
@@ -34015,11 +34015,7 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
                                 { to: '/' },
                                 'Home'
                             )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'ul',
-                        { className: 'right' },
+                        ),
                         adminLinks
                     )
                 )
@@ -34813,7 +34809,7 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'row' },
+                { className: 'row marginTop-100' },
                 _react2.default.createElement(
                     'div',
                     { className: 'col m6 offset-m3 s12' },

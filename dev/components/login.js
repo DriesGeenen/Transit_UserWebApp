@@ -35,7 +35,7 @@ export default inject("LoginStore")(observer(class Login extends Component {
     }
 
     render() {
-        return (<div className="row">
+        return (<div className="row marginTop-100">
             <div className="col m6 offset-m3 s12">
                 <Card className='input-field darken-1 z-depth-4' textClassName='' title='Login' actions={[<Button key="loginButton" className="orange darken-3" onClick={this.onLogin} waves='light'>Login</Button>]}>
                     <Input id="icon_prefix" s={12} label="E-mail" value={this.state.email} onChange={this.onEmailChange} type="text" />

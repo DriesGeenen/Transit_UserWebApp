@@ -27,13 +27,11 @@ export default inject("LoginStore")(observer(class Navbar extends Component {
         }
 
         return (
-            <nav className="navbar black">
-                <div className="nav-wrapper">
-                    <a href="#!" className="brand-logo center hide-on-med-and-down">Transit</a>
-                    <ul className="left">
+            <nav>
+                <div className="nav-wrapper grey darken-3">
+                    <a href="#!" className="brand-logo hide-on-med-and-down"><img src="https://i.imgur.com/YxVHfN8.png" height="45px" width="45px"/></a>
+                    <ul id="nav-mobile" className="right marginRight-20 marginTop-20">
                         <li><NavLink to="/">Home</NavLink></li>
-                    </ul>
-                    <ul className="right">
                         {adminLinks}
                     </ul>
                 </div>
