@@ -18,9 +18,9 @@ export default inject("LoginStore")(observer(class Navbar extends Component {
 
         if (this.props.LoginStore.LoggedIn) {
             var adminLinks = [];
-            adminLinks.push(<li key={1}><NavLink to="/users">Alle gebruikers</NavLink></li>
+            adminLinks.push(<li key={1}><NavLink to="/users">All users</NavLink></li>
             );
-            adminLinks.push(<li key={2}><NavLink to="/create">Gebruiker toevoegen</NavLink></li>
+            adminLinks.push(<li key={2}><NavLink to="/create">Add user</NavLink></li>
             );
             adminLinks.push(<li key={3}><Link to="/login" onClick={this.onLogout}>Logout</Link></li>
             );

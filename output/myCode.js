@@ -33972,7 +33972,7 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
                     _react2.default.createElement(
                         _reactRouterDom.NavLink,
                         { to: '/users' },
-                        'Alle gebruikers'
+                        'All users'
                     )
                 ));
                 adminLinks.push(_react2.default.createElement(
@@ -33981,7 +33981,7 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
                     _react2.default.createElement(
                         _reactRouterDom.NavLink,
                         { to: '/create' },
-                        'Gebruiker toevoegen'
+                        'Add user'
                     )
                 ));
                 adminLinks.push(_react2.default.createElement(
@@ -34187,12 +34187,12 @@ var UserReader = function UserReader(_ref) {
         _react2.default.createElement(
             'h2',
             { className: 'page-header' },
-            'Gebruikers'
+            'Users'
         ),
         _react2.default.createElement(
             _reactRouterDom.Link,
             { to: '/create' },
-            'Gebruiker toevoegen'
+            'Add user'
         ),
         _react2.default.createElement(
             'div',
@@ -34209,7 +34209,7 @@ var UserReader = function UserReader(_ref) {
                         _react2.default.createElement(
                             'th',
                             { scope: 'col' },
-                            'Naam'
+                            'Name'
                         ),
                         _react2.default.createElement(
                             'th',
@@ -34219,22 +34219,22 @@ var UserReader = function UserReader(_ref) {
                         _react2.default.createElement(
                             'th',
                             { scope: 'col' },
-                            'Telefoon'
+                            'Telephone'
                         ),
                         _react2.default.createElement(
                             'th',
                             { scope: 'col' },
-                            'Rol'
+                            'Role'
                         ),
                         _react2.default.createElement(
                             'th',
                             { scope: 'col' },
-                            'Bewerken'
+                            'Edit'
                         ),
                         _react2.default.createElement(
                             'th',
                             { scope: 'col' },
-                            'Verwijderen'
+                            'Delete'
                         )
                     )
                 ),
@@ -34372,7 +34372,7 @@ var Create = function (_Component) {
                         _react2.default.createElement(
                             'h3',
                             { className: 'panel-title' },
-                            'GEBRUIKER TOEVOEGEN'
+                            'ADD USER'
                         )
                     ),
                     _react2.default.createElement(
@@ -34387,9 +34387,9 @@ var Create = function (_Component) {
                                 _react2.default.createElement(
                                     'label',
                                     { htmlFor: 'firstName' },
-                                    'Voornaam:'
+                                    'First name:'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'firstName', value: firstName, onChange: this.onChange, placeholder: 'voornaam' })
+                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'firstName', value: firstName, onChange: this.onChange, placeholder: 'first name' })
                             ),
                             _react2.default.createElement(
                                 'div',
@@ -34397,9 +34397,9 @@ var Create = function (_Component) {
                                 _react2.default.createElement(
                                     'label',
                                     { htmlFor: 'lastName' },
-                                    'Achternaam:'
+                                    'Last name:'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'lastName', value: lastName, onChange: this.onChange, placeholder: 'achternaam' })
+                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'lastName', value: lastName, onChange: this.onChange, placeholder: 'last name' })
                             ),
                             _react2.default.createElement(
                                 'div',
@@ -34407,9 +34407,9 @@ var Create = function (_Component) {
                                 _react2.default.createElement(
                                     'label',
                                     { htmlFor: 'password' },
-                                    'Wachtwoord:'
+                                    'Password:'
                                 ),
-                                _react2.default.createElement('input', { type: 'password', className: 'form-control', name: 'password', value: password, onChange: this.onChange, placeholder: 'wachtwoord' })
+                                _react2.default.createElement('input', { type: 'password', className: 'form-control', name: 'password', value: password, onChange: this.onChange, placeholder: 'password' })
                             ),
                             _react2.default.createElement(
                                 'div',
@@ -34428,9 +34428,9 @@ var Create = function (_Component) {
                                 _react2.default.createElement(
                                     'label',
                                     { htmlFor: 'phone' },
-                                    'Telefoon:'
+                                    'Telephone:'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'phone', value: phone, onChange: this.onChange, placeholder: 'telefoon' })
+                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'phone', value: phone, onChange: this.onChange, placeholder: 'telephone' })
                             ),
                             _react2.default.createElement(
                                 'div',
@@ -34450,7 +34450,7 @@ var Create = function (_Component) {
                             _react2.default.createElement(
                                 _reactRouterDom.Link,
                                 { className: 'btn btn-default orangeColor', to: '/users' },
-                                'Annuleren'
+                                'Cancel'
                             )
                         )
                     )
@@ -34615,9 +34615,9 @@ var Edit = function (_Component) {
                 _react2.default.createElement(
                     'label',
                     { htmlFor: 'password' },
-                    'Wachtwoord:'
+                    'Password:'
                 ),
-                _react2.default.createElement('input', { type: 'password', className: 'form-control', name: 'password', onChange: this.onChange, placeholder: 'Nieuw wachtwoord' })
+                _react2.default.createElement('input', { type: 'password', className: 'form-control', name: 'password', onChange: this.onChange, placeholder: 'New password' })
             );
 
             this.setState({ output: output });
@@ -34637,7 +34637,7 @@ var Edit = function (_Component) {
                         _react2.default.createElement(
                             'h3',
                             { className: 'panel-title' },
-                            'Gebruiker bewerken'
+                            'EDIT USER'
                         )
                     ),
                     _react2.default.createElement(
@@ -34652,9 +34652,9 @@ var Edit = function (_Component) {
                                 _react2.default.createElement(
                                     'label',
                                     { htmlFor: 'firstName' },
-                                    'Voornaam:'
+                                    'First name:'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'firstName', value: this.state.user.firstName, onChange: this.onChange, placeholder: 'Voornaam' })
+                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'firstName', value: this.state.user.firstName, onChange: this.onChange, placeholder: 'first name' })
                             ),
                             _react2.default.createElement(
                                 'div',
@@ -34662,9 +34662,9 @@ var Edit = function (_Component) {
                                 _react2.default.createElement(
                                     'label',
                                     { htmlFor: 'lastName' },
-                                    'Achternaam:'
+                                    'Last name:'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'lastName', value: this.state.user.lastName, onChange: this.onChange, placeholder: 'Achternaam' })
+                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'lastName', value: this.state.user.lastName, onChange: this.onChange, placeholder: 'last name' })
                             ),
                             _react2.default.createElement(
                                 'div',
@@ -34674,7 +34674,7 @@ var Edit = function (_Component) {
                                     { htmlFor: 'email' },
                                     'Email:'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'email', value: this.state.user.email, onChange: this.onChange, placeholder: 'Email' })
+                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'email', value: this.state.user.email, onChange: this.onChange, placeholder: 'email' })
                             ),
                             _react2.default.createElement(
                                 'div',
@@ -34682,9 +34682,9 @@ var Edit = function (_Component) {
                                 _react2.default.createElement(
                                     'label',
                                     { htmlFor: 'phone' },
-                                    'Telefoon:'
+                                    'Telephone:'
                                 ),
-                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'phone', value: this.state.user.phone, onChange: this.onChange, placeholder: 'Telefoon' })
+                                _react2.default.createElement('input', { type: 'text', className: 'form-control', name: 'phone', value: this.state.user.phone, onChange: this.onChange, placeholder: 'telephone' })
                             ),
                             _react2.default.createElement(
                                 'div',
@@ -34702,19 +34702,19 @@ var Edit = function (_Component) {
                                 _react2.default.createElement(
                                     'a',
                                     { onClick: this.onChangePassClick },
-                                    'Wachtwoord wijzigen'
+                                    'Change password'
                                 )
                             ),
                             this.state.output,
                             _react2.default.createElement(
                                 'button',
                                 { type: 'submit', className: 'btn btn-primary orangeColor marginRight-20' },
-                                'Opslaan'
+                                'Save'
                             ),
                             _react2.default.createElement(
                                 _reactRouterDom.Link,
                                 { className: 'btn btn-default orangeColor', to: '/users' },
-                                'Annuleren'
+                                'Cancel'
                             )
                         )
                     )

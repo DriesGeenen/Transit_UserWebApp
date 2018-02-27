@@ -58,36 +58,36 @@ class Create extends Component {
                 <div className="panel panel-default marginTop-20">
                     <div className="panel-heading">
                         <h3 className="panel-title">
-                            GEBRUIKER TOEVOEGEN
+                            ADD USER
                         </h3>
                     </div>
                     <div className="panel-body">
                         <form onSubmit={this.onSubmit}>
                             <div className="form-group">
-                                <label htmlFor="firstName">Voornaam:</label>
-                                <input type="text" className="form-control" name="firstName" value={firstName} onChange={this.onChange} placeholder="voornaam" />
+                                <label htmlFor="firstName">First name:</label>
+                                <input type="text" className="form-control" name="firstName" value={firstName} onChange={this.onChange} placeholder="first name" />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="lastName">Achternaam:</label>
-                                <input type="text" className="form-control" name="lastName" value={lastName} onChange={this.onChange} placeholder="achternaam" />
+                                <label htmlFor="lastName">Last name:</label>
+                                <input type="text" className="form-control" name="lastName" value={lastName} onChange={this.onChange} placeholder="last name" />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="password">Wachtwoord:</label>
-                                <input type="password" className="form-control" name="password" value={password} onChange={this.onChange} placeholder="wachtwoord" />
+                                <label htmlFor="password">Password:</label>
+                                <input type="password" className="form-control" name="password" value={password} onChange={this.onChange} placeholder="password" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email:</label>
                                 <input type="text" className="form-control" name="email" value={email} onChange={this.onChange} placeholder="email" />                            </div>
                             <div className="form-group">
-                                <label htmlFor="phone">Telefoon:</label>
-                                <input type="text" className="form-control" name="phone" value={phone} onChange={this.onChange} placeholder="telefoon" />
+                                <label htmlFor="phone">Telephone:</label>
+                                <input type="text" className="form-control" name="phone" value={phone} onChange={this.onChange} placeholder="telephone" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="checked">Admin:</label>
                                 <input type="checkbox" name="checked" onChange={this.onChange}/>
                             </div>
                             <button type="submit" className="btn btn-primary orangeColor marginRight-20">Submit</button>
-                            <Link className="btn btn-default orangeColor" to={`/users`}>Annuleren</Link>
+                            <Link className="btn btn-default orangeColor" to={`/users`}>Cancel</Link>
                         </form>
                     </div>
                 </div>

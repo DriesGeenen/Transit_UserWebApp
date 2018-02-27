@@ -55,8 +55,8 @@ class Edit extends Component {
 
     onChangePassClick(e){
         const output = (
-            <div className="form-group"><label htmlFor="password">Wachtwoord:</label>
-            <input type="password" className="form-control" name="password" onChange={this.onChange} placeholder="Nieuw wachtwoord" /></div>
+            <div className="form-group"><label htmlFor="password">Password:</label>
+            <input type="password" className="form-control" name="password" onChange={this.onChange} placeholder="New password" /></div>
         );
 
         this.setState({output: output});
@@ -68,37 +68,37 @@ class Edit extends Component {
                 <div className="panel panel-default marginTop-20">
                     <div className="panel-heading">
                         <h3 className="panel-title">
-                            Gebruiker bewerken
+                            EDIT USER
                         </h3>
                     </div>
                     <div className="panel-body">
                         <form onSubmit={this.onSubmit}>
                             <div className="form-group">
-                                <label htmlFor="firstName">Voornaam:</label>
-                                <input type="text" className="form-control" name="firstName" value={this.state.user.firstName} onChange={this.onChange} placeholder="Voornaam" />
+                                <label htmlFor="firstName">First name:</label>
+                                <input type="text" className="form-control" name="firstName" value={this.state.user.firstName} onChange={this.onChange} placeholder="first name" />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="lastName">Achternaam:</label>
-                                <input type="text" className="form-control" name="lastName" value={this.state.user.lastName} onChange={this.onChange} placeholder="Achternaam" />
+                                <label htmlFor="lastName">Last name:</label>
+                                <input type="text" className="form-control" name="lastName" value={this.state.user.lastName} onChange={this.onChange} placeholder="last name" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email:</label>
-                                <input type="text" className="form-control" name="email" value={this.state.user.email} onChange={this.onChange} placeholder="Email" />
+                                <input type="text" className="form-control" name="email" value={this.state.user.email} onChange={this.onChange} placeholder="email" />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="phone">Telefoon:</label>
-                                <input type="text" className="form-control" name="phone" value={this.state.user.phone} onChange={this.onChange} placeholder="Telefoon" />
+                                <label htmlFor="phone">Telephone:</label>
+                                <input type="text" className="form-control" name="phone" value={this.state.user.phone} onChange={this.onChange} placeholder="telephone" />
                             </div>
                             <div>
                                 <label htmlFor="role">Admin:</label>
                                 <input type="checkbox" className="form-control" name="role" onChange={this.onChange} checked={this.state.checked} />
                             </div>
                             <div className="form-group marginTop-20">
-                                <a onClick={this.onChangePassClick}>Wachtwoord wijzigen</a>
+                                <a onClick={this.onChangePassClick}>Change password</a>
                             </div>
                             {this.state.output}
-                            <button type="submit" className="btn btn-primary orangeColor marginRight-20">Opslaan</button>
-                            <Link className="btn btn-default orangeColor" to={`/users`}>Annuleren</Link>
+                            <button type="submit" className="btn btn-primary orangeColor marginRight-20">Save</button>
+                            <Link className="btn btn-default orangeColor" to={`/users`}>Cancel</Link>
                         </form>
                     </div>
                 </div>

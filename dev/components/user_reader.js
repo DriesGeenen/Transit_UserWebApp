@@ -18,18 +18,18 @@ const UserReader = ({ users, onClickHandler }) => {
 
     return (
         <div>
-            <h2 className="page-header">Gebruikers</h2>
-            <Link to={`/create`}>Gebruiker toevoegen</Link>
+            <h2 className="page-header">Users</h2>
+            <Link to={`/create`}>Add user</Link>
             <div className="table-responsive marginTop-20">
                 <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col">Naam</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Telefoon</th>
-                            <th scope="col">Rol</th>
-                            <th scope="col">Bewerken</th>
-                            <th scope="col">Verwijderen</th>
+                            <th scope="col">Telephone</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
