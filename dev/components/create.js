@@ -55,7 +55,7 @@ class Create extends Component {
 
         return (
             <div className="container">
-                <div className="panel panel-default">
+                <div className="panel panel-default marginTop-20">
                     <div className="panel-heading">
                         <h3 className="panel-title">
                             GEBRUIKER TOEVOEGEN
@@ -84,10 +84,10 @@ class Create extends Component {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="checked">Admin:</label>
-                                <input type="checkbox" className="form-control" name="checked" onChange={this.onChange} />
+                                <input type="checkbox" name="checked" onChange={this.onChange}/>
                             </div>
-                            <button type="submit" className="btn btn-primary">Submit</button>
-                            <Link className="btn btn-default" to={`/users`}>Annuleren</Link>
+                            <button type="submit" className="btn btn-primary orangeColor marginRight-20">Submit</button>
+                            <Link className="btn btn-default orangeColor" to={`/users`}>Annuleren</Link>
                         </form>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
 import {render} from 'react-dom';
 import { Switch, Route, HashRouter } from 'react-router-dom';
 import { Provider } from 'mobx-react';
-import LoginStore from "./Components/Mobx/LoginStore";
+import LoginStore from "./components/mobx/LoginStore";
 
 import Navbar from './components/navbar';
 import UserReader from './containers/user_reader';

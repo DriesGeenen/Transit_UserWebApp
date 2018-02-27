@@ -65,7 +65,7 @@ class Edit extends Component {
     render() {
         return (
             <div className="container">
-                <div className="panel panel-default">
+                <div className="panel panel-default marginTop-20">
                     <div className="panel-heading">
                         <h3 className="panel-title">
                             Gebruiker bewerken
@@ -97,8 +97,8 @@ class Edit extends Component {
                                 <a onClick={this.onChangePassClick}>Wachtwoord wijzigen</a>
                             </div>
                             {this.state.output}
-                            <button type="submit" className="btn btn-primary">Opslaan</button>
-                            <Link className="btn btn-default" to={`/users`}>Annuleren</Link>
+                            <button type="submit" className="btn btn-primary orangeColor marginRight-20">Opslaan</button>
+                            <Link className="btn btn-default orangeColor" to={`/users`}>Annuleren</Link>
                         </form>
                     </div>
                 </div>

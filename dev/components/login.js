@@ -31,7 +31,7 @@ export default inject("LoginStore")(observer(class Login extends Component {
         await this.props.LoginStore.SignIn(this.state.email,this.state.password);
 
         if(this.props.LoginStore.LoggedIn){
-            this.props.history.push('/');
+            this.props.history.push('/users');
         } else {
             var output = (
                 <p><b>Login failed</b></p>

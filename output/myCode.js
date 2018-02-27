@@ -33003,6 +33003,7 @@ var LoginStore = function () {
     function LoginStore() {
         _classCallCheck(this, LoginStore);
 
+        console.log('constructor');
         this.apiUrl = "http://localhost:6600/auth/";
         (0, _mobx.extendObservable)(this, {
             Email: "",
@@ -33012,17 +33013,18 @@ var LoginStore = function () {
     }
 
     _createClass(LoginStore, [{
-        key: "SignIn",
+        key: 'SignIn',
         value: async function SignIn(givenEmail, givenPassword) {
             var body = { email: givenEmail, password: givenPassword };
             var data = await _axios2.default.post(this.apiUrl + "login", body);
+            console.log(data);
             if (data.data.success) {
                 this.LoggedIn = true;
                 localStorage.setItem("token", data.data.token);
             }
         }
     }, {
-        key: "LogOut",
+        key: 'LogOut',
         value: function LogOut() {
             this.LoggedIn = false;
             localStorage.clear();
@@ -34007,15 +34009,6 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
                     _react2.default.createElement(
                         'ul',
                         { id: 'nav-mobile', className: 'right marginRight-20 marginTop-20' },
-                        _react2.default.createElement(
-                            'li',
-                            null,
-                            _react2.default.createElement(
-                                _reactRouterDom.NavLink,
-                                { to: '/' },
-                                'Home'
-                            )
-                        ),
                         adminLinks
                     )
                 )
@@ -34372,7 +34365,7 @@ var Create = function (_Component) {
                 { className: 'container' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'panel panel-default' },
+                    { className: 'panel panel-default marginTop-20' },
                     _react2.default.createElement(
                         'div',
                         { className: 'panel-heading' },
@@ -34447,16 +34440,16 @@ var Create = function (_Component) {
                                     { htmlFor: 'checked' },
                                     'Admin:'
                                 ),
-                                _react2.default.createElement('input', { type: 'checkbox', className: 'form-control', name: 'checked', onChange: this.onChange })
+                                _react2.default.createElement('input', { type: 'checkbox', name: 'checked', onChange: this.onChange })
                             ),
                             _react2.default.createElement(
                                 'button',
-                                { type: 'submit', className: 'btn btn-primary' },
+                                { type: 'submit', className: 'btn btn-primary orangeColor marginRight-20' },
                                 'Submit'
                             ),
                             _react2.default.createElement(
                                 _reactRouterDom.Link,
-                                { className: 'btn btn-default', to: '/users' },
+                                { className: 'btn btn-default orangeColor', to: '/users' },
                                 'Annuleren'
                             )
                         )
@@ -34637,7 +34630,7 @@ var Edit = function (_Component) {
                 { className: 'container' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'panel panel-default' },
+                    { className: 'panel panel-default marginTop-20' },
                     _react2.default.createElement(
                         'div',
                         { className: 'panel-heading' },
@@ -34715,12 +34708,12 @@ var Edit = function (_Component) {
                             this.state.output,
                             _react2.default.createElement(
                                 'button',
-                                { type: 'submit', className: 'btn btn-primary' },
+                                { type: 'submit', className: 'btn btn-primary orangeColor marginRight-20' },
                                 'Opslaan'
                             ),
                             _react2.default.createElement(
                                 _reactRouterDom.Link,
-                                { className: 'btn btn-default', to: '/users' },
+                                { className: 'btn btn-default orangeColor', to: '/users' },
                                 'Annuleren'
                             )
                         )
@@ -34774,7 +34767,8 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
 
         _this.state = {
             email: '',
-            password: ''
+            password: '',
+            output: ''
         };
 
         _this.onEmailChange = _this.onEmailChange.bind(_this);
@@ -34801,7 +34795,19 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
             await this.props.LoginStore.SignIn(this.state.email, this.state.password);
 
             if (this.props.LoginStore.LoggedIn) {
-                this.props.history.push('/');
+                this.props.history.push('/users');
+            } else {
+                var output = _react2.default.createElement(
+                    'p',
+                    null,
+                    _react2.default.createElement(
+                        'b',
+                        null,
+                        'Login failed'
+                    )
+                );
+
+                this.setState({ output: output });
             }
         }
     }, {
@@ -34822,6 +34828,7 @@ exports.default = (0, _mobxReact.inject)("LoginStore")((0, _mobxReact.observer)(
                             )] },
                         _react2.default.createElement(_reactMaterialize.Input, { id: 'icon_prefix', s: 12, label: 'E-mail', value: this.state.email, onChange: this.onEmailChange, type: 'text' }),
                         _react2.default.createElement(_reactMaterialize.Input, { s: 12, label: 'Password', value: this.state.password, onChange: this.onPasswordChange, type: 'password' }),
+                        this.state.output,
                         _react2.default.createElement('div', { className: 'clearfix' })
                     )
                 )

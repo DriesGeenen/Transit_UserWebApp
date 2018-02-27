@@ -32,6 +32,12 @@ html, body {
     box-shadow: 0 1px 0 0 #ed7010 !important
 }
 
+.orangeColor {
+    background: #eb7511 !important;
+    font-size: 15px;
+    text-align: center;
+}
+
 .brand-logo {
     margin-left:75px;
 }
